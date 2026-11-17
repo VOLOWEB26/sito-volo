@@ -1,0 +1,30 @@
+# Configurazione del pannello (Decap CMS). Da completare con i dati reali (vedi la guida alla messa online):
+# sostituire NOME-ACCOUNT/NOME-REPOSITORY con quelli creati su GitHub
+# e NOME-DOMINIO.it con l'indirizzo del sito.
+backend:
+  name: github
+  repo: NOME-ACCOUNT/NOME-REPOSITORY
+  branch: main
+  base_url: https://NOME-DOMINIO.it   # l'indirizzo del sito, senza / finale
+  auth_endpoint: api/auth
+media_folder: "immagini"
+public_folder: "/immagini"
+locale: "it"
+collections:
+  - name: novita
+    label: "Novità ed eventi"
+    files:
+      - label: "Elenco novità ed eventi"
+        name: "news"
+        file: "content/news.json"
+        fields:
+          - label: "Voci"
+            name: "voci"
+            widget: "list"
+            summary: "{{fields.data}} {{fields.titolo}}"
+            fields:
+              - {label: "Titolo", name: "titolo", widget: "string"}
+              - {label: "Data (lasciare vuota se da definire)", name: "data", widget: "date", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false}
+              - {label: "Tipo", name: "tipo", widget: "select", options: ["Evento","Articolo","Avviso"]}
+              - {label: "Testo", name: "testo", widget: "text"}
+              - {label: "Link (facoltativo)", name: "link", widget: "string", required: false}

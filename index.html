@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOLO – Cittadini VOLOntari ODV</title>
+<meta name="description" content="Associazione di volontariato di Milano: volontari accanto alle équipe educative di comunità per minori e servizi educativi.">
+<link rel="icon" href="immagini/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cielo:#e1eefb;--blu:#0a3fc0;--inchiostro:#1c2b36;--carta:#f1f7fd;--filo:#b7d3ef;--accento:#e07a2f;--tenue:#3b5a82}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:18px/1.65 "Nunito Sans",system-ui,sans-serif;color:var(--inchiostro);background:linear-gradient(180deg,#f7fbff 0%,#e4effb 100%) fixed;position:relative;min-height:100vh}
+body::before{content:"";position:fixed;inset:auto 0 0 0;height:min(62vh,640px);background:url(immagini/sfondo-mani.png) center bottom/560px auto repeat-x;opacity:.8;z-index:-1;pointer-events:none}
+a{color:var(--blu)}a:focus-visible,button:focus-visible{outline:3px solid var(--accento);outline-offset:2px}
+header{background:#0c2d70;border-bottom:3px solid var(--accento)}
+.testa{max-width:1160px;margin:auto;padding:16px 20px;display:flex;flex-wrap:wrap;gap:14px 36px;align-items:center;justify-content:space-between}
+.marchio{display:block;color:var(--blu);text-decoration:none;background:#fff;padding:10px 16px 8px;border-radius:6px}
+.marchio img{display:block;width:270px;max-width:100%;height:auto}
+.marchio small{display:block;font:600 .8rem "Nunito Sans",sans-serif;margin-top:2px;color:var(--tenue)}
+nav ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,auto);gap:2px 20px}
+nav a{display:block;padding:4px 0;font-weight:600;font-size:.92rem;text-decoration:none;color:#fff;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:#ff9a4d}
+.ig{display:inline-flex;align-items:center;gap:6px}.ig svg{flex:none}nav .ig{margin-top:6px}
+.pagina{max-width:1160px;margin:auto;padding:32px 20px 64px;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:36px}
+main{background:rgba(255,255,255,.88);padding:8px 36px 32px;border-radius:6px;border:1px solid rgba(183,211,239,.7)}
+main section{display:none}main section:target,main section.attiva{display:block}
+h1,h2{font-family:Bitter,Georgia,serif;color:var(--blu);line-height:1.2}
+h1{font-size:2.05rem;margin:.9em 0 .6em}h2{font-size:1.3rem;margin-top:1.8em}
+main p,main li{max-width:68ch}
+.apertura{font-size:1.25rem}
+aside{background:rgba(255,255,255,.88);border:1px solid rgba(183,211,239,.7);border-radius:6px;padding:8px 22px 20px;align-self:start}
+aside h2{margin-top:.8em;font-size:1.1rem}
+.voce{margin:0 0 1.1em}.voce time{display:block;font-weight:600;font-size:.9rem;color:#4b6475}
+.voce a,.voce strong{font-weight:700}
+.tipo{font-size:.8rem;background:var(--cielo);color:var(--blu);padding:1px 8px;border-radius:99px;margin-left:6px}
+.scheda{border:1px solid var(--filo);border-left:6px solid var(--accento);padding:6px 20px;margin:1.2em 0;background:#fff}
+main h3{font:700 1.05rem Bitter,Georgia,serif;color:var(--blu);margin:1.5em 0 .4em}
+.dati{background:var(--cielo);padding:14px 20px;border-radius:4px}
+.hero{margin:22px 0 4px}.hero img{display:block;width:100%;height:auto;max-height:400px;object-fit:cover;object-position:50% 66%;border-radius:6px;border:1px solid var(--filo)}
+.hero figcaption{font-size:.85rem;color:var(--tenue);margin-top:6px}
+.foto{margin:1.2em 0}.foto img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid var(--filo)}.foto figcaption{font-size:.85rem;color:var(--tenue);margin-top:6px}
+.banner{margin:0 0 1.2em}.banner img{display:block;width:100%;max-height:300px;object-fit:cover;object-position:center 40%;border-radius:6px;border:1px solid var(--filo)}
+.incontro{border:1px solid var(--filo);border-left:6px solid var(--blu);background:#fff;padding:14px 22px 10px;margin:1.1em 0;border-radius:0 4px 4px 0}
+.incontro h3{font:700 1.1rem Bitter,Georgia,serif;color:var(--blu);margin:.2em 0 .3em}
+.quando{display:inline-block;background:var(--cielo);color:var(--blu);font-weight:700;font-size:.9rem;padding:2px 12px;border-radius:99px}
+.quando.da-def{background:#fdebd9;color:#8a4310}
+.dove{font-size:.95rem;color:var(--tenue);margin:.2em 0 .6em}
+.doc{list-style:none;padding:0;margin:1em 0}
+.doc li{margin:0 0 .7em;padding-left:30px;position:relative}
+.doc li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:20px;border:2px solid var(--blu);border-radius:2px;background:linear-gradient(var(--blu),var(--blu)) 3px 5px/6px 2px no-repeat,linear-gradient(var(--blu),var(--blu)) 3px 9px/8px 2px no-repeat}
+.lingue{list-style:none;margin:0 0 1em;padding:0;font-size:.93rem}.lingue li{margin:0 0 .8em;color:var(--tenue)}.lingue li b{color:var(--ink,inherit)}.lingue a{font-weight:600;margin-right:.2em}
+.doc small{display:block;color:var(--tenue)}
+table{border-collapse:collapse;width:100%;max-width:640px;margin:1em 0;font-size:.98rem}
+caption{text-align:left;font-weight:700;padding:6px 0;color:var(--blu)}
+th,td{padding:7px 12px;border-bottom:1px solid var(--filo);text-align:left}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tfoot td,tr.tot td{font-weight:700;background:var(--cielo)}
+.nota{font-size:.92rem;color:var(--tenue)}
+footer{background:rgba(225,238,251,.95);border-top:1px solid var(--filo);font-size:.9rem}
+.piede{max-width:1160px;margin:auto;padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px 48px;justify-content:space-between}
+.menu-btn{display:none}
+@media(max-width:900px){.pagina{grid-template-columns:1fr;gap:24px}main{padding:4px 20px 24px}nav ul{grid-template-columns:repeat(2,auto)}.marchio img{width:220px}
+.testa{padding:8px 16px;gap:8px 16px;flex-wrap:wrap}.marchio{padding:5px 10px 4px}.marchio img{width:120px}.marchio small{display:none}
+.menu-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font:700 .95rem "Nunito Sans",sans-serif;padding:8px 14px;cursor:pointer}
+.menu-btn svg{width:18px;height:18px}
+nav{display:none;width:100%}nav.aperto{display:block}nav ul{grid-template-columns:1fr 1fr;gap:4px 16px;padding-bottom:8px}nav a{padding:8px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header><div class="testa">
+<a class="marchio" href="#home"><img src="immagini/logo.png" width="900" height="356" alt="VOLO – cittadini volontari"><small>Organizzazione di Volontariato (ODV)</small></a>
+<button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
+<nav id="nav-principale" aria-label="Principale"><ul>
+<li><a href="#chi-siamo">Chi siamo</a></li><li><a href="#volontari">I volontari</a></li><li><a href="#formazione">Formazione</a></li><li><a href="#consiglio">Il Consiglio Direttivo</a></li><li><a href="#convenzione">Convenzione con Comin</a></li><li><a href="#statuto">Lo statuto</a></li>
+<li><a href="#bilanci">Bilanci</a></li><li><a href="#sostenerci">Per sostenerci</a></li><li><a href="#news">News</a></li><li><a href="#contatti">Contatti</a></li><li><a href="#link">Link utili</a></li>
+</ul><a class="ig" href="https://www.instagram.com/volocittadinivolontari" rel="noopener" style="color:#fff;font-weight:600;font-size:.92rem;text-decoration:none"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></nav></div></header>
+<div class="pagina"><main>
+<section id="home"><figure class="hero"><img src="immagini/foto-cortile.jpg" width="1400" height="1050" alt="Il cortile della festa di VOLO: cartelli a freccia «Ascolta le voci degli altri» e «Fai sentire la tua voce!» davanti a un grande orecchio colorato"><figcaption>Dalla festa di VOLO: «Ascolta le voci degli altri… Fai sentire la tua voce!»</figcaption></figure>
+<h1>Volontari accanto a chi educa</h1>
+<p class="apertura">Siamo un’associazione di volontariato con sede a Milano, iscritta al Registro Unico Nazionale del Terzo Settore.</p>
+<p>Insieme vogliamo favorire e dare dignità a esperienze di volontariato sociale consapevole, e diffondere e valorizzare la cultura del volontariato come forma di cittadinanza attiva.</p>
+<p>Oggi i volontari di VOLO operano soprattutto nelle comunità per minori e in altre realtà educative, per sostenere le équipe esistenti. Sono selezionati, formati, indirizzati al contesto e al ruolo più adatto, e accompagnati nell’attività.</p>
+<p>Ci impegniamo anche in formazione, sensibilizzazione e raccolta fondi a sostegno dell’associazione e dei servizi in cui operiamo.</p>
+<p><a href="#volontari">Scopri cosa fanno i volontari</a></p></section>
+
+<section id="chi-siamo"><h1>Chi siamo</h1>
+<figure class="foto"><img src="immagini/foto-giardino.jpg" width="1200" height="610" alt="Volontari e bambini nel giardino di Cascina Turro, tra foglie e luce d’autunno" ><figcaption>I volontari durante la festa di VOLO.</figcaption></figure>
+<p>Nel 2023 alcuni volontari che già operavano nelle strutture gestite dalla cooperativa Comin hanno deciso, d’accordo con la cooperativa, di organizzare meglio il loro servizio: più efficace e più coordinato con le esigenze delle strutture e dei loro utenti.</p>
+<p>Il 7 ottobre 2023 è nata l’associazione «VOLO – Cittadini VOLOntari» con 24 soci fondatori. Nel primo periodo ci siamo dedicati a darle una struttura, fino all’iscrizione al RUNTS, per garantire a tutti la massima serietà anche nelle forme richieste dalla legge sul Terzo Settore.</p>
+<p>La struttura è rimasta snella e composta interamente da volontari, per non distogliere risorse dallo scopo principale.</p>
+<p>Abbiamo avviato il coordinamento tra i volontari esistenti e quelli che si sono uniti, organizzato con Comin giornate di formazione per i nuovi volontari e attivato uno sportello di orientamento per accompagnarli verso le attività in cui possono essere più utili.</p>
+<p>I rapporti con la cooperativa Comin sono regolati da una <a href="#convenzione">convenzione</a> approvata nel 2025. Gli aggiornamenti sulle attività sono nella sezione <a href="#news">News</a>.</p></section>
+
+<section id="volontari"><h1>I volontari</h1>
+<figure class="foto"><img src="immagini/foto-gruppo.jpg" width="1400" height="816" alt="Un gruppo di volontari di VOLO posa in cortile, insieme a due clown di corsia, sotto festoni e palloncini"><figcaption>Volontari di VOLO alla festa nel cortile.</figcaption></figure>
+<p>Sono cittadine e cittadini molto diversi per età, formazione e provenienza: studenti, lavoratori, pensionati che dedicano parte del loro tempo a un servizio presso strutture educative, soprattutto nel territorio milanese.</p>
+<p>Secondo lo statuto, il volontario è una persona che, per libera scelta, svolge attività a favore della comunità e del bene comune, in modo personale, spontaneo e gratuito, senza fini di lucro, neanche indiretti, e solo per solidarietà. L’attività non può essere retribuita in alcun modo, nemmeno dal beneficiario.</p>
+<h2>Cosa si fa</h2>
+<p>Presso comunità educative residenziali e servizi per minori, i volontari aiutano nei compiti e nella vita quotidiana (pulizie, cucina, piccole riparazioni), partecipano a gite, giochi e feste, o passano qualche ora con bambini e ragazzi, chiacchierando, giocando o «annoiandosi» insieme. Operano sempre a supporto delle équipe educative, che restano le uniche responsabili dei ragazzi e delle comunità.</p>
+<div class="scheda"><p><b>Vuoi unirti a noi o conoscerci meglio?</b><br>Scrivici a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a>: ti proponiamo un primo colloquio di orientamento.</p></div>
+
+<h2>Come si diventa volontari</h2>
+<p>Il percorso prevede un colloquio conoscitivo e di orientamento, un secondo colloquio con il coordinatore del servizio individuato, e un percorso di formazione iniziale. Per operare nei servizi di Comin bisogna essere soci di VOLO, condividere la missione e i valori delle due realtà, partecipare alla formazione e all’accompagnamento e seguire un corso sulla salute e sicurezza sul lavoro. La formazione continua tutto l’anno: trovi il <a href="#formazione">calendario degli incontri</a> nella pagina dedicata. Maggiori dettagli nella pagina <a href="#convenzione">Convenzione con Comin</a>.</p>
+
+<h2>Moduli per l’iscrizione</h2>
+<ul class="doc">
+<li><a href="files/richiesta-iscrizione.pdf" target="_blank" rel="noopener">Richiesta di iscrizione come socio</a><small>Da compilare, firmare e inviare a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a> (scansione PDF o foto leggibile)</small></li>
+<li><a href="files/informativa-privacy-soci.pdf" target="_blank" rel="noopener">Informativa privacy e consenso al trattamento dei dati</a><small>Da firmare insieme alla richiesta di iscrizione</small></li>
+<li><a href="files/moduli-volontari-attivi.pdf" target="_blank" rel="noopener">Moduli per i soci che svolgono volontariato attivo</a><small>Patto di corresponsabilità, autocertificazione sull’assenza di condanne penali (per chi opera con minori), autocertificazione sul corso sicurezza, dichiarazione su Modello organizzativo e Codice di comportamento di Comin. Si firmano una sola volta e restano validi anche per gli anni successivi.</small></li>
+</ul>
+<h3>Moduli in altre lingue · Forms in other languages · Formulaires dans d’autres langues</h3>
+<ul class="lingue">
+<li><b>Richiesta di iscrizione per cittadini stranieri</b> · Membership request for foreign citizens · Demande d’adhésion pour les citoyens étrangers<br><a href="files/richiesta-iscrizione-stranieri-it.pdf" target="_blank" rel="noopener" hreflang="it" lang="it">Italiano</a> · <a href="files/richiesta-iscrizione-en.pdf" target="_blank" rel="noopener" hreflang="en" lang="en">English</a> · <a href="files/richiesta-iscrizione-fr.pdf" target="_blank" rel="noopener" hreflang="fr" lang="fr">Français</a></li>
+<li><b>Moduli per i soci che svolgono volontariato attivo</b> · Forms for active volunteers · Formulaires pour les bénévoles actifs<br><a href="files/moduli-volontari-attivi-en.pdf" target="_blank" rel="noopener" hreflang="en" lang="en">English</a> · <a href="files/moduli-volontari-attivi-fr.pdf" target="_blank" rel="noopener" hreflang="fr" lang="fr">Français</a></li>
+</ul>
+
+<h2>Assicurazione</h2>
+<p>VOLO ha stipulato un’assicurazione per la <b>responsabilità civile verso terzi</b> e la <b>responsabilità civile degli operatori</b>. I costi sono sostenuti con il contributo di Comin, secondo quanto previsto dalla convenzione.</p>
+<h3>Rischi coperti</h3>
+<ul>
+<li><b>Danni involontariamente provocati a terzi</b> (persone e cose) dai volontari durante le attività dell’associazione, inclusi morte, lesioni personali e danneggiamenti. Per esempio: un volontario rompe un oggetto di un ragazzo ospite della comunità; danneggia la cucina mentre aiuta a preparare un pasto; ferisce un ragazzo durante un’attività manuale o sportiva; ferisce qualcuno spostando un tavolo alla festa annuale di VOLO.</li>
+<li><b>Danni provocati, anche con dolo, da persone di cui il volontario deve rispondere.</b> Per esempio: un minore accompagnato al parco giochi ferisce un altro bambino con una pallonata; a una festa litiga con un altro bambino e gli rompe gli occhiali.</li>
+<li><b>Danni subiti dal volontario</b> in quanto prestatore d’opera, durante lo svolgimento delle sue funzioni. I volontari non retribuiti sono comunque considerati prestatori d’opera.</li>
+</ul>
+<h3>Rischi non coperti</h3>
+<ul>
+<li><b>Danni da circolazione su automezzi.</b> Possono essere coperti dall’assicurazione degli automezzi di Comin o da quella dell’auto privata usata. Per esempio: l’utente accompagnato in auto si ferisce in un incidente, oppure il volontario urta qualcuno facendo manovra.</li>
+<li>Danni da auto o moto guidate da persone non abilitate o con meno di 15 anni.</li>
+<li>Danni da mancato, ritardato, insufficiente o inefficace intervento di assistenza.</li>
+<li>Danni a cose trasportate su autoveicoli.</li>
+<li>Danni a parenti e coniugi dei volontari.</li>
+<li>Danni da furto.</li>
+<li>Danni a cose altrui derivanti dall’incendio di cose detenute dal volontario.</li>
+<li>Altri casi particolari descritti in polizza.</li>
+</ul>
+<h3>Cosa fare in caso di sinistro</h3>
+<ul>
+<li>Segnala ogni evento appena possibile e <b>non oltre tre giorni</b> da quando accade, meglio prima, con una descrizione e l’eventuale documentazione.</li>
+<li>È preferibile segnalare anche gli eventi dubbi, per verificare se sono coperti.</li>
+<li>Le segnalazioni vanno fatte a <b>Simona Brusco</b>: <a href="mailto:simona.brusco@coopcomin.org">simona.brusco@coopcomin.org</a>.</li>
+<li>Se la comunicazione manca o arriva in ritardo, l’assicurazione potrebbe non rispondere.</li>
+</ul>
+<p class="nota">Questa è una sintesi semplificata e non esaustiva: in caso di differenze, prevale la polizza, disponibile su richiesta a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a>.</p>
+<ul class="doc"><li><a href="files/assicurazione-volontari.pdf" target="_blank" rel="noopener">Scheda assicurazione volontari (PDF)</a><small>La scheda illustrativa che consegniamo ai volontari</small></li></ul>
+</section>
+
+<section id="formazione"><h1>Formazione</h1>
+<figure class="banner"><img src="immagini/foto-lanterne.jpg" width="1200" height="860" alt="Lanterne colorate appese tra gli alberi del cortile di Cascina Turro"></figure>
+<figure class="foto"><img src="immagini/foto-incontro.jpg" width="1200" height="880" alt="Un incontro di formazione di VOLO in sala: una volontaria parla davanti allo schermo con il titolo «VOLO cittadini volontari», i partecipanti siedono in cerchio"><figcaption>Un incontro di formazione, 5 ottobre 2024.</figcaption></figure>
+<h2>Calendario 2026/2027</h2>
+<p>La partecipazione agli incontri di formazione è una delle caratteristiche proprie della nostra associazione, ed è prevista anche dalla convenzione con la cooperativa Comin. Condividere motivazioni, riflessioni e buone prassi, e rielaborare quello che accade nella quotidianità dei servizi, contesti di alta complessità relazionale ed emotiva, è per noi un grande valore. Non solo «fare qualcosa», ma «esserci in modo consapevole», collaborando con gli operatori professionali delle strutture.</p>
+
+<div class="incontro"><span class="quando">Sabato 7 novembre 2026 · 10-13</span>
+<h3>Essere volontari in VOLO</h3>
+<p class="dove">Cascina Turro, piazza del Governo Provvisorio 9, Milano</p>
+<p>Un incontro rivolto soprattutto ai nuovi volontari: condividere il senso del volontariato, dare spazio ai racconti di chi è arrivato da poco, mettere a fuoco il ruolo dei volontari e alcune attenzioni educative. Si conclude con un aperitivo insieme.</p></div>
+
+<div class="incontro"><span class="quando">Sabato 13 febbraio 2027 · 10-13</span>
+<h3>Il ruolo del volontario in comunità</h3>
+<p class="dove">Cascina Turro, piazza del Governo Provvisorio 9, Milano</p>
+<p>Dopo tre anni di esperienza sul campo, un momento di ascolto e condivisione: che cosa ha funzionato, quali difficoltà abbiamo incontrato, quali miglioramenti possibili. Più attenzione ai temi degli adolescenti che vivono nelle tre comunità residenziali. Si conclude con un aperitivo insieme.</p></div>
+
+<div class="incontro"><span class="quando da-def">Data da comunicare</span>
+<h3>Il ruolo del volontario in comunità con i bambini piccoli</h3>
+<p class="dove">Casetta di Timmi, Carugo</p>
+<p>Un incontro dedicato ai volontari che si occupano di bambini piccoli, in continuità con il lavoro iniziato lo scorso anno. La data sarà concordata con i volontari e gli educatori della Casetta.</p></div>
+
+<div class="incontro"><span class="quando da-def">Data e luogo da stabilire</span>
+<h3>La collaborazione tra educatori e volontari in comunità</h3>
+<p>Da tre anni sperimentiamo la collaborazione tra personale educativo e volontari: è il momento di fare il punto. Parallelamente agli incontri con i volontari, gli educatori affronteranno il tema nelle loro ore di formazione; seguirà un confronto in plenaria tra rappresentanti di educatori e volontari per mettere insieme i punti di vista ed elaborare alcune linee guida. Vorremmo dare spazio anche alla voce di bambini e adolescenti, e stiamo valutando come raccogliere i loro pensieri.</p></div>
+
+<div class="incontro"><span class="quando da-def">Date da definire</span>
+<h3>Non solo comunità</h3>
+<p class="dove">Cascina Turro</p>
+<p>La presenza dei volontari si sta allargando ad altri servizi di Comin: compito di VOLO è sintonizzarsi con i bisogni formativi dei singoli contesti per accompagnare al meglio i volontari. Sono previsti incontri a Cascina Turro, un contesto di aggregazione e socialità che coinvolge le famiglie della zona.</p></div>
+
+<div class="scheda"><p><b>Come partecipare</b><br>Per organizzare al meglio gli incontri, manda una mail di adesione a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a>. Chiarimenti, domande e dubbi sono sempre ben accolti: basta scrivere allo stesso indirizzo.</p></div>
+<p class="nota">Il percorso di formazione fa parte degli impegni descritti nella <a href="#convenzione">convenzione con Comin</a>.</p>
+</section>
+
+<section id="consiglio"><h1>Il Consiglio Direttivo</h1>
+<p>Il Consiglio Direttivo amministra l’associazione secondo gli indirizzi dell’Assemblea degli associati e ne cura le relazioni e le attività. Si riunisce periodicamente, coinvolgendo anche i soci disponibili a sostenerlo.</p>
+<h2>I membri</h2>
+<ul><li>Paola Cannì, presidente</li><li>Claudio Figini, vicepresidente</li><li>Lorenzo Cavallotti, segretario</li><li>Simona Brusco</li><li>Giovanni Cappelini</li><li>Chiara Lunelli</li><li>Marcella Muscu</li><li>Roberta Raviotta</li></ul></section>
+
+<section id="convenzione"><h1>La convenzione con Comin</h1>
+<p>VOLO è promossa dalla cooperativa sociale Comin e ne condivide i valori fondanti. Una convenzione, approvata dal CdA di Comin il 17 aprile 2025 e dal Direttivo di VOLO il 14 maggio 2025 e firmata a Milano il 24 maggio 2025, regola la collaborazione tra le due realtà. Ecco i punti principali.</p>
+<h2>Scopo</h2>
+<p>Disciplinare la collaborazione per la gestione di alcuni servizi di Comin: non solo l’intervento sul campo, ma anche il lavoro di ricerca su come rispondere ai bisogni sempre più complessi che emergono dai servizi educativi nei territori. Le due parti si impegnano anche in attività di sensibilizzazione e promozione del volontariato e in azioni per il benessere di volontari e operatori.</p>
+<h2>Cosa fa Comin</h2>
+<p>Mette a disposizione di VOLO come sede i locali di via Pimentel 9 a Milano e si impegna perché i volontari possano operare nei suoi servizi in modo proficuo, in stretta collaborazione con soci e dipendenti.</p>
+<h2>Cosa fa VOLO</h2>
+<p>Organizza corsi di formazione e momenti di supervisione per i volontari, tratta i dati personali nel rispetto del GDPR, si uniforma agli adempimenti sulla sicurezza nei luoghi di lavoro e, su richiesta di Comin, partecipa a raccolte fondi per progetti in cui sono impegnati i volontari. Si impegna inoltre a far conoscere ai volontari il Modello organizzativo e il Codice di comportamento di Comin (D.Lgs. 231/2001).</p>
+<h2>Selezione, formazione e accompagnamento</h2>
+<p>Uno sportello di informazione, orientamento e selezione offre un primo colloquio; individuato il servizio, un secondo colloquio avviene con il coordinatore. Segue una formazione iniziale e poi incontri ricorrenti, accompagnamento sul campo e uno spazio di ascolto, in rapporto costante con gli operatori e con il referente dell’équipe territoriale dei volontari.</p>
+<h2>I volontari</h2>
+<p>Per operare nei servizi di Comin i volontari devono essere soci di VOLO, condividere la missione e i valori, aver seguito la formazione, aver letto il Modello organizzativo e il Codice di comportamento e aver seguito i corsi sulla salute e sicurezza sul lavoro (Comin ne organizza periodicamente a sue spese). Operano di norma insieme agli operatori della cooperativa; in alcune situazioni previste, per esempio per accompagnamenti semplici, possono operare anche in loro assenza. Un rapporto continuativo con una persona accolta deve essere previsto e autorizzato formalmente.</p>
+<h2>Assicurazione e trasporti</h2>
+<p>VOLO stipula una polizza di responsabilità civile per i soci, e Comin ne sostiene i costi con modalità concordate di volta in volta. I volontari possono usare i mezzi di Comin, coperti da polizza anche a loro tutela; se usano la propria auto possono chiedere il rimborso chilometrico previsto per gli operatori.</p>
+<h2>Sostegno economico</h2>
+<p>I presidenti delle due realtà si incontrano almeno una volta l’anno per valutare il bilancio di VOLO e cercare, anche con raccolte fondi congiunte, le risorse necessarie. Solo in ultima istanza Comin e VOLO possono concordare un sostegno economico da parte di Comin.</p>
+<h2>Durata</h2>
+<p>Cinque anni dalla firma, con rinnovo tacito per un periodo uguale in assenza di disdetta scritta.</p>
+<ul class="doc"><li><a href="files/convenzione-comin-volo.pdf" target="_blank" rel="noopener">Testo integrale della convenzione (PDF)</a></li></ul></section>
+
+<section id="statuto"><h1>Lo statuto</h1>
+<p>Lo statuto regola tutti gli aspetti della vita dell’associazione. Puoi scaricare la copia in vigore qui:</p>
+<ul class="doc"><li><a href="files/statuto.pdf" target="_blank" rel="noopener">Statuto (PDF)</a><small>Allegato A all’atto costitutivo del 7 ottobre 2023, registrato presso l’Agenzia delle Entrate</small></li></ul></section>
+
+<section id="bilanci"><h1>Bilanci</h1>
+<p>I bilanci sono redatti secondo le modalità previste per gli enti del Terzo Settore e depositati presso il RUNTS dopo l’approvazione dell’assemblea. Qui trovi i documenti presentati ai soci e una sintesi dei dati. Il bilancio 2025 è stato approvato dall’assemblea dei soci.</p>
+<ul class="doc">
+<li><a href="files/bilancio-2025-preventivo-2026.pdf" target="_blank" rel="noopener">Bilancio 2025 e preventivo 2026 (PDF)</a></li>
+<li><a href="files/bilancio-2024-preventivo-2025.pdf" target="_blank" rel="noopener">Bilancio 2024 e preventivo 2025 (PDF)</a></li>
+</ul>
+<table><caption>Bilanci consuntivi (euro)</caption>
+<thead><tr><th></th><th class="n">2024</th><th class="n">2025</th></tr></thead>
+<tbody>
+<tr><td>Entrate</td><td class="n">470,00</td><td class="n">980,00</td></tr>
+<tr><td>Uscite</td><td class="n">160,66</td><td class="n">592,48</td></tr>
+<tr><td>Avanzo dell’anno</td><td class="n">309,34</td><td class="n">387,52</td></tr>
+<tr><td>Avanzo anni precedenti</td><td class="n">340,00</td><td class="n">649,34</td></tr>
+</tbody><tfoot><tr><td>Avanzo di gestione (deposito bancario)</td><td class="n">649,34</td><td class="n">1.036,86</td></tr></tfoot></table>
+<p class="nota">2024: entrate da quote associative; uscite per spese bancarie, PEC, firma digitale. 2025: entrate da quote associative e contributo Comin; uscite per assicurazione, spese bancarie e PEC; minori uscite del previsto per iniziative.</p>
+<table><caption>Preventivo 2026 (euro)</caption>
+<tbody>
+<tr><td>Entrate previste</td><td class="n">1.700,00</td></tr>
+<tr><td>Uscite previste</td><td class="n">1.540,00</td></tr>
+<tr><td>Avanzo previsto</td><td class="n">160,00</td></tr>
+<tr><td>Avanzo anni precedenti</td><td class="n">1.036,86</td></tr>
+</tbody><tfoot><tr><td>Avanzo di gestione previsto</td><td class="n">1.196,86</td></tr></tfoot></table>
+<p class="nota">Il preventivo 2026 prevede anche entrate da raccolta fondi, da usare per iniziative in favore dei ragazzi. Un minimo patrimonio permette di anticipare fondi per le iniziative, anche partecipando a bandi.</p></section>
+
+<section id="sostenerci"><h1>Per sostenerci</h1>
+<p>Ci finanziamo con le quote dei soci, le donazioni e il 5 per mille. Teniamo le spese di gestione al minimo indispensabile e destiniamo il massimo al supporto diretto delle attività di volontariato. Puoi vedere come usiamo le risorse nella pagina <a href="#bilanci">Bilanci</a>.</p>
+<div class="dati"><p><b>Donazione con bonifico</b><br>Intestato a: Associazione Volo – Cittadini Volontari<br>IBAN: <b>IT37W0306909606100000402742</b></p>
+<p><b>5 per mille</b><br>Nella dichiarazione dei redditi inserisci il nostro codice fiscale <b>97958810158</b>. Non comporta nessuna spesa aggiuntiva per te.</p></div>
+<h2>Vantaggi fiscali</h2>
+<p>VOLO è una ODV: persone e imprese che fanno una donazione possono scegliere se inserirla tra gli oneri deducibili o tra le detrazioni per oneri. Le erogazioni liberali, tranne quelle in contanti, sono deducibili dal reddito o detraibili dalle imposte al 35% (art. 83, comma 1, D.Lgs. 117/2017). La quota annuale di iscrizione non è né deducibile né detraibile.</p>
+<p>Per i bonifici l’estratto conto vale come ricevuta; conservalo ai fini fiscali. Puoi anche chiedere una ricevuta specifica a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a>.</p></section>
+
+<section id="news"><h1>News</h1><div id="elenco-news"></div></section>
+
+<section id="contatti"><h1>Contatti</h1>
+<p>Scrivici a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a></p>
+<p>Sede: via Fonseca Pimentel 9, 20127 Milano</p>
+<p>PEC, solo per comunicazioni formali: <b>volocittadinivolontari@pec.it</b></p>
+<p>Siamo anche su Instagram: <a href="https://www.instagram.com/volocittadinivolontari" rel="noopener">@volocittadinivolontari</a>.</p>
+<h2>Privacy</h2>
+<p>L’associazione tratta i dati personali dei soci secondo il Regolamento UE 2016/679 (GDPR). Titolare del trattamento è VOLO – Cittadini VOLOntari ODV; i dati sono trattati dai membri del Consiglio Direttivo per gestire l’iscrizione e la partecipazione alle attività, sono comunicati alla cooperativa Comin e, per la partecipazione a bandi, a enti pubblici e partner, e non vengono diffusi né trasferiti fuori dall’Unione Europea. Sono conservati finché si resta soci. Per accedere ai dati, correggerli, cancellarli o revocare il consenso scrivi a <a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a>.</p>
+<ul class="doc"><li><a href="files/informativa-privacy-soci.pdf" target="_blank" rel="noopener">Informativa sul trattamento dei dati personali (PDF)</a><small>Da leggere e firmare, con il consenso, insieme alla richiesta di iscrizione</small></li></ul></section>
+
+<section id="link"><h1>Link utili</h1><p>Le realtà con cui collaboriamo:</p>
+<ul><li><a href="https://www.coopcomin.org">Cooperativa Comin</a></li></ul></section>
+</main>
+<aside aria-labelledby="t-novita"><h2 id="t-novita">Novità ed eventi</h2><div id="laterale"></div><p><a href="#news">Tutte le news</a></p></aside></div>
+<footer><div class="piede"><div>VOLO – Cittadini VOLOntari ODV<br>C.F. 97958810158<br>Iscrizione RUNTS rep. n. 136903</div><div><a href="mailto:volo@coopcomin.org">volo@coopcomin.org</a><br>Via Fonseca Pimentel 9, Milano<br><a class="ig" href="https://www.instagram.com/volocittadinivolontari" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Seguici su Instagram</a></div></div></footer>
+<script>
+const FALLBACK={"voci": [{"titolo": "Essere volontari in VOLO", "data": "2026-11-07", "tipo": "Evento", "testo": "Sabato 7 novembre 2026, ore 10-13, a Cascina Turro (piazza del Governo Provvisorio 9, Milano). Incontro di formazione rivolto soprattutto ai nuovi volontari; si chiude con un aperitivo. Adesioni a volo@coopcomin.org.", "link": "#formazione"}, {"titolo": "Il ruolo del volontario in comunità", "data": "2027-02-13", "tipo": "Evento", "testo": "Sabato 13 febbraio 2027, ore 10-13, a Cascina Turro. Un momento di ascolto e condivisione dopo tre anni di esperienza sul campo; si chiude con un aperitivo. Adesioni a volo@coopcomin.org.", "link": "#formazione"}, {"titolo": "Il ruolo del volontario con i bambini piccoli", "data": "", "tipo": "Evento", "testo": "Incontro alla Casetta di Timmi, a Carugo. Date da definire.", "link": "#formazione"}, {"titolo": "La collaborazione tra educatori e volontari", "data": "", "tipo": "Evento", "testo": "Incontro di confronto sulla collaborazione tra educatori e volontari. Data e luogo da definire.", "link": "#formazione"}, {"titolo": "Non solo comunità", "data": "", "tipo": "Evento", "testo": "Incontri a Cascina Turro, aperti ai nuovi contesti di servizio di Comin. Date da definire.", "link": "#formazione"}]};
+const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dt=d=>{const x=new Date(d+"T12:00:00");return isNaN(x)?"":x.toLocaleDateString("it-IT",{day:"numeric",month:"long",year:"numeric"})};
+function disegna(dati){
+ const v=[...(dati.voci||[])].sort((a,b)=>(!a.data)-(!b.data)||(b.data||"").localeCompare(a.data||""));
+ const voce=(e,lungo)=>`<div class="voce">${e.data?`<time datetime="${esc(e.data)}">${dt(e.data)}</time>`:`<time>Date da definire</time>`}${e.link?`<a href="${esc(e.link)}">${esc(e.titolo)}</a>`:`<strong>${esc(e.titolo)}</strong>`}<span class="tipo">${esc(e.tipo)}</span>${lungo?`<p>${esc(e.testo)}</p>`:""}</div>`;
+ document.getElementById("laterale").innerHTML=v.slice(0,4).map(e=>voce(e,false)).join("")||"<p>Nessuna novità per ora.</p>";
+ document.getElementById("elenco-news").innerHTML=v.map(e=>voce(e,true)).join("")||"<p>Nessuna news per ora.</p>";
+}
+fetch("content/news.json").then(r=>r.json()).then(disegna).catch(()=>disegna(FALLBACK));
+const mb=document.getElementById("menu-btn"),nv=document.getElementById("nav-principale");
+function chiudiMenu(){nv.classList.remove("aperto");mb.setAttribute("aria-expanded","false")}
+mb.addEventListener("click",()=>{const a=nv.classList.toggle("aperto");mb.setAttribute("aria-expanded",a)});
+nv.addEventListener("click",e=>{if(e.target.closest("a"))chiudiMenu()});
+function vai(){const id=location.hash.slice(1)||"home";const s=document.getElementById(id)?id:"home";
+ document.querySelectorAll("main section").forEach(x=>x.classList.toggle("attiva",x.id===s));
+ document.querySelectorAll("nav a").forEach(a=>a.toggleAttribute("aria-current",a.getAttribute("href")==="#"+s));requestAnimationFrame(()=>window.scrollTo(0,0))}
+if("scrollRestoration" in history)history.scrollRestoration="manual";
+addEventListener("hashchange",vai);addEventListener("load",()=>setTimeout(()=>scrollTo(0,0),50));vai();
+</script></body></html>
